@@ -9,18 +9,44 @@ class holaMundo
 {
     static void Main(string[] args)
     {
+        List<Persona> personas = new List<Persona>();
+
+        for(int i = 0;i < 3; i++)
+        {
+            Persona persona = new Persona();
+
+            Console.WriteLine("Ingrese su nombre: ");
+            persona.nombre = Console.ReadLine();
+            Console.WriteLine("Ingrese su edad: ");
+            persona.edad = int.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese su altura");
+            persona.altura = double.Parse(Console.ReadLine());
+
+            personas.Add(persona);
+
+            persona.Presentarse();
+
+        }
+
+        foreach (Persona persona in personas)
+        {
+            Console.WriteLine(persona.nombre + ", " + persona.edad +", "+ persona.altura);
+        }
+
+
+
         //var saludo = new holaMundo();
         //saludo.Saludar();
         //var resultado = new operacionesBasicas();
         //resultado.Operaciones(57, 71);
         //var numeros = new almacenarNumeros();
         //numeros.GuardarNumeros();
-        var instancia = new funcionesVarias();
-        instancia.sumar(4, 5);
-        instancia.restar(6, 3);
-        instancia.multiplicar(2, 3);
-        instancia.dividir(8, 4);
-        instancia.promedio(new List<int> { 1, 5, 8, 4, 6, 4 });
+        //var instancia = new funcionesVarias();
+        //instancia.sumar(4, 5);
+        //instancia.restar(6, 3);
+        //instancia.multiplicar(2, 3);
+        //instancia.dividir(8, 4);
+        //instancia.promedio(new List<int> { 1, 5, 8, 4, 6, 4 });
     }
 
     //public void Saludar()
@@ -139,37 +165,37 @@ class holaMundo
     - Crear funciones/métodos separados para: sumar, restar, multiplicar, dividir, calcular promedio de una lista de números. Luego usar esas funciones desde el `Main`.
  */
 
-class funcionesVarias
-{
-    public void sumar(int a, int b)
-    {
-        Console.WriteLine(a + b);
-    }
+//class funcionesVarias
+//{
+//    public void sumar(int a, int b)
+//    {
+//        Console.WriteLine(a + b);
+//    }
 
-    public void restar(int a, int b)
-    {
-        Console.WriteLine(a - b);
-    }
+//    public void restar(int a, int b)
+//    {
+//        Console.WriteLine(a - b);
+//    }
 
-    public void multiplicar (int a, int b)
-    {
-        Console.WriteLine(a * b);
-    }
+//    public void multiplicar (int a, int b)
+//    {
+//        Console.WriteLine(a * b);
+//    }
 
-    public void dividir(int a, int b)
-    {
-        Console.WriteLine(a / b);
-    }
+//    public void dividir(int a, int b)
+//    {
+//        Console.WriteLine(a / b);
+//    }
 
-    public void promedio(List<int> listaNumeros)
-    {
-        int resultado = 0;
-        foreach(int numero in listaNumeros)
-        {
-         resultado += numero;   
-        } 
-        int promedio = resultado / listaNumeros.Count;
+//    public void promedio(List<int> listaNumeros)
+//    {
+//        int resultado = 0;
+//        foreach(int numero in listaNumeros)
+//        {
+//         resultado += numero;   
+//        } 
+//        int promedio = resultado / listaNumeros.Count;
 
-        Console.WriteLine("Tu promedio es:" + promedio);
-    }
-}
+//        Console.WriteLine("Tu promedio es:" + promedio);
+//    }
+//}
