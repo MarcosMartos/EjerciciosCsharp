@@ -13,8 +13,14 @@ class holaMundo
         //saludo.Saludar();
         //var resultado = new operacionesBasicas();
         //resultado.Operaciones(57, 71);
-        var numeros = new almacenarNumeros();
-        numeros.GuardarNumeros();
+        //var numeros = new almacenarNumeros();
+        //numeros.GuardarNumeros();
+        var instancia = new funcionesVarias();
+        instancia.sumar(4, 5);
+        instancia.restar(6, 3);
+        instancia.multiplicar(2, 3);
+        instancia.dividir(8, 4);
+        instancia.promedio(new List<int> { 1, 5, 8, 4, 6, 4 });
     }
 
     //public void Saludar()
@@ -54,9 +60,9 @@ class holaMundo
 //        {
 //            Console.WriteLine(a / b);
 //        }
-           
-    
-       
+
+
+
 //    }
 //}
 
@@ -65,65 +71,105 @@ class holaMundo
 - Modificarlo para que si el usuario ingresa un número negativo, lo ignore y continúe pidiendo hasta tener 10 números positivos válidos.
  */
 
-class almacenarNumeros
+//class almacenarNumeros
+//{
+//    public void GuardarNumeros()
+//    {
+//        // Instanciamos un array
+//        int[] numeros = new int[5];
+
+//        //Inicializamos una variable contadora
+//        int contador = 0;
+
+//        // Usamos un ciclo while para pedir datos al usuario
+//        while(contador < 5)
+//        {
+//            Console.WriteLine("Ingrese un número entero");
+//            int numero = int.Parse(Console.ReadLine());
+//            if(numero < 0)
+//            {
+//                Console.WriteLine("Solo se pueden ingresar números enteros, ingrese otro por favor.");
+//                numero = int.Parse(Console.ReadLine());
+//                numeros[contador] = numero;
+//                contador++;
+//            }
+//            else
+//            {
+//                numeros[contador] = numero;
+//                contador++;
+//            }
+
+//        }
+
+//        // Iniciamos las variables de resultados
+//        int suma = 0;
+//        int maximo = numeros[0];
+//        int minimo = numeros[0];
+
+//        // Usamos foreach para recorrer la matriz y calcular los valores
+//        foreach (int numero in numeros)
+//        {
+//            suma += numero;
+//            if(numero > maximo)
+//            {
+//                maximo = numero;
+//            }
+//            if(numero < minimo)
+//            {
+//                minimo = numero;
+//            }
+//        }
+//        double promedio = (double)suma / numeros.Length;
+
+//        Console.WriteLine("Suma total: " + suma);
+//        Console.WriteLine("Promedio: " + promedio);
+//        Console.WriteLine("Número máximo: " + maximo);
+//        Console.WriteLine("Número mínimo: " + minimo);
+
+//        //foreach (int numero in numeros)
+//        //{
+//        //    Console.WriteLine(numero);
+//        //}
+
+//    }
+//}
+
+/*
+ 4. **Funciones / Métodos**
+    - Crear funciones/métodos separados para: sumar, restar, multiplicar, dividir, calcular promedio de una lista de números. Luego usar esas funciones desde el `Main`.
+ */
+
+class funcionesVarias
 {
-    public void GuardarNumeros()
+    public void sumar(int a, int b)
     {
-        // Instanciamos un array
-        int[] numeros = new int[5];
+        Console.WriteLine(a + b);
+    }
 
-        //Inicializamos una variable contadora
-        int contador = 0;
+    public void restar(int a, int b)
+    {
+        Console.WriteLine(a - b);
+    }
 
-        // Usamos un ciclo while para pedir datos al usuario
-        while(contador < 5)
+    public void multiplicar (int a, int b)
+    {
+        Console.WriteLine(a * b);
+    }
+
+    public void dividir(int a, int b)
+    {
+        Console.WriteLine(a / b);
+    }
+
+    public void promedio(List<int> listaNumeros)
+    {
+        int resultado = 0;
+        foreach(int numero in listaNumeros)
         {
-            Console.WriteLine("Ingrese un número entero");
-            int numero = int.Parse(Console.ReadLine());
-            if(numero < 0)
-            {
-                Console.WriteLine("Solo se pueden ingresar números enteros, ingrese otro por favor.");
-                numero = int.Parse(Console.ReadLine());
-                numeros[contador] = numero;
-                contador++;
-            }
-            else
-            {
-                numeros[contador] = numero;
-                contador++;
-            }
-            
-        }
+         resultado += numero;   
+        } 
+        int promedio = resultado / listaNumeros.Count;
 
-        // Iniciamos las variables de resultados
-        int suma = 0;
-        int maximo = numeros[0];
-        int minimo = numeros[0];
-
-        // Usamos foreach para recorrer la matriz y calcular los valores
-        foreach (int numero in numeros)
-        {
-            suma += numero;
-            if(numero > maximo)
-            {
-                maximo = numero;
-            }
-            if(numero < minimo)
-            {
-                minimo = numero;
-            }
-        }
-        double promedio = (double)suma / numeros.Length;
-
-        Console.WriteLine("Suma total: " + suma);
-        Console.WriteLine("Promedio: " + promedio);
-        Console.WriteLine("Número máximo: " + maximo);
-        Console.WriteLine("Número mínimo: " + minimo);
-
-        //foreach (int numero in numeros)
-        //{
-        //    Console.WriteLine(numero);
-        //}
-
+        Console.WriteLine("Tu promedio es:" + promedio);
     }
 }
