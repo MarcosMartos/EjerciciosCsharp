@@ -9,29 +9,92 @@ class holaMundo
 {
     static void Main(string[] args)
     {
-        List<Persona> personas = new List<Persona>();
 
-        for(int i = 0;i < 3; i++)
-        {
-            Persona persona = new Persona();
 
-            Console.WriteLine("Ingrese su nombre: ");
-            persona.nombre = Console.ReadLine();
-            Console.WriteLine("Ingrese su edad: ");
-            persona.edad = int.Parse(Console.ReadLine());
-            Console.WriteLine("Ingrese su altura");
-            persona.altura = double.Parse(Console.ReadLine());
+        List<Cliente> clientes = new List<Cliente>();
 
-            personas.Add(persona);
+        for (int i = 0; i < 5; i++) {
+            
+            Cliente cliente = new Cliente();
 
-            persona.Presentarse();
+            Console.WriteLine("Nombre: ");
+            cliente.nombre = Console.ReadLine();
+            Console.WriteLine("Deuda: ");
+            cliente.deuda = int.Parse(Console.ReadLine());
+            cliente.calcularEstado(cliente.deuda);
+
+            clientes.Add(cliente);
 
         }
 
-        foreach (Persona persona in personas)
+        foreach(Cliente cliente in clientes)
         {
-            Console.WriteLine(persona.nombre + ", " + persona.edad +", "+ persona.altura);
+            Console.WriteLine(cliente.nombre+": "+cliente.estado);
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //List<Programador> programadores = new List<Programador>();
+
+
+        //for (int i = 0; i < 3; i++)
+        //{
+        //    Programador programador = new Programador();
+
+        //    Console.WriteLine("Ingrese su nombre: ");
+        //    programador.nombre = Console.ReadLine();
+        //    Console.WriteLine("Ingrese su salario: ");
+        //    programador.salario = int.Parse(Console.ReadLine());
+            
+
+        //    programadores.Add(programador);
+        //}
+
+        //foreach (Programador programador in programadores)
+        //{
+        //    if(programador.salario > 650000)
+        //    {
+        //        Console.WriteLine(programador.nombre+" "+programador.salario);
+        //    }
+        //}
+
+
+        //List<Persona> personas = new List<Persona>();
+
+        //for(int i = 0;i < 3; i++)
+        //{
+        //    Persona persona = new Persona();
+
+        //    Console.WriteLine("Ingrese su nombre: ");
+        //    persona.nombre = Console.ReadLine();
+        //    Console.WriteLine("Ingrese su edad: ");
+        //    persona.edad = int.Parse(Console.ReadLine());
+        //    Console.WriteLine("Ingrese su altura");
+        //    persona.altura = double.Parse(Console.ReadLine());
+
+        //    personas.Add(persona);
+
+        //    persona.Presentarse();
+
+        //}
+
+        //foreach (Persona persona in personas)
+        //{
+        //    Console.WriteLine(persona.nombre + ", " + persona.edad +", "+ persona.altura);
+        //}
 
 
 
