@@ -11,11 +11,16 @@ class holaMundo
     {
 
         Cliente instancia = new Cliente();
-        List<Cliente> clientes = instancia.LeerArchivo();
-        List<Cliente> estado = instancia.calcularEstado(clientes);
-
-        instancia.crearArchivo(estado);
-
+        //List<Cliente> clientes = instancia.LeerArchivo();
+        //List<Cliente> estado = instancia.calcularEstado(clientes);
+        //instancia.crearArchivo(estado);
+        var deudores = instancia.Deudores();
+        var listadoDeudores = deudores.Where(d => d.deuda > 0 ).ToList();
+        Console.WriteLine(listadoDeudores.Count);
+        foreach (var deudor in listadoDeudores)
+        {
+            Console.WriteLine(deudor.nombre);
+        }
 
     }
 

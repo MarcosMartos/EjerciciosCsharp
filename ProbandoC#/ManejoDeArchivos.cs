@@ -90,6 +90,34 @@ class Cliente
 
     }
 
+    public List<Cliente> Deudores()
+    {
+
+        List<Cliente> clientes = new List<Cliente>();
+
+        // Leer el archivo
+
+        string[] archivo = File.ReadAllLines(rutaGuardar);
+
+        // Recorrer los datos con un for
+
+        for (int i = 1; i < archivo.Length; i++)
+        {
+            string[] datos = archivo[i].Split(",");
+
+            var cliente = new Cliente
+            {
+                nombre = datos[0],
+                deuda = int.Parse(datos[1]),
+                estado = datos[2],
+            };
+
+            clientes.Add(cliente);
+
+        }
+        return clientes;
+    }
+
 
     //public override string ToString()
     //{
