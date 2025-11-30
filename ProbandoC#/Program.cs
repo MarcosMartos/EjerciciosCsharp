@@ -10,107 +10,112 @@ class holaMundo
     static void Main(string[] args)
     {
 
+        Cliente instancia = new Cliente();
+        List<Cliente> clientes = instancia.LeerArchivo();
+        List<Cliente> estado = instancia.calcularEstado(clientes);
 
-        List<Cliente> clientes = new List<Cliente>();
-
-        for (int i = 0; i < 5; i++) {
-            
-            Cliente cliente = new Cliente();
-
-            Console.WriteLine("Nombre: ");
-            cliente.nombre = Console.ReadLine();
-            Console.WriteLine("Deuda: ");
-            cliente.deuda = int.Parse(Console.ReadLine());
-            cliente.calcularEstado(cliente.deuda);
-
-            clientes.Add(cliente);
-
-        }
-
-        foreach(Cliente cliente in clientes)
-        {
-            Console.WriteLine(cliente.nombre+": "+cliente.estado);
-        }
+        instancia.crearArchivo(estado);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //List<Programador> programadores = new List<Programador>();
-
-
-        //for (int i = 0; i < 3; i++)
-        //{
-        //    Programador programador = new Programador();
-
-        //    Console.WriteLine("Ingrese su nombre: ");
-        //    programador.nombre = Console.ReadLine();
-        //    Console.WriteLine("Ingrese su salario: ");
-        //    programador.salario = int.Parse(Console.ReadLine());
-            
-
-        //    programadores.Add(programador);
-        //}
-
-        //foreach (Programador programador in programadores)
-        //{
-        //    if(programador.salario > 650000)
-        //    {
-        //        Console.WriteLine(programador.nombre+" "+programador.salario);
-        //    }
-        //}
-
-
-        //List<Persona> personas = new List<Persona>();
-
-        //for(int i = 0;i < 3; i++)
-        //{
-        //    Persona persona = new Persona();
-
-        //    Console.WriteLine("Ingrese su nombre: ");
-        //    persona.nombre = Console.ReadLine();
-        //    Console.WriteLine("Ingrese su edad: ");
-        //    persona.edad = int.Parse(Console.ReadLine());
-        //    Console.WriteLine("Ingrese su altura");
-        //    persona.altura = double.Parse(Console.ReadLine());
-
-        //    personas.Add(persona);
-
-        //    persona.Presentarse();
-
-        //}
-
-        //foreach (Persona persona in personas)
-        //{
-        //    Console.WriteLine(persona.nombre + ", " + persona.edad +", "+ persona.altura);
-        //}
-
-
-
-        //var saludo = new holaMundo();
-        //saludo.Saludar();
-        //var resultado = new operacionesBasicas();
-        //resultado.Operaciones(57, 71);
-        //var numeros = new almacenarNumeros();
-        //numeros.GuardarNumeros();
-        //var instancia = new funcionesVarias();
-        //instancia.sumar(4, 5);
-        //instancia.restar(6, 3);
-        //instancia.multiplicar(2, 3);
-        //instancia.dividir(8, 4);
-        //instancia.promedio(new List<int> { 1, 5, 8, 4, 6, 4 });
     }
+
+
+}
+
+
+
+
+
+
+
+
+    //List<Cliente> clientes = new List<Cliente>();
+
+    //for (int i = 0; i < 5; i++) {
+
+    //    Cliente cliente = new Cliente();
+
+    //    Console.WriteLine("Nombre: ");
+    //    cliente.nombre = Console.ReadLine();
+    //    Console.WriteLine("Deuda: ");
+    //    cliente.deuda = int.Parse(Console.ReadLine());
+    //    cliente.calcularEstado(cliente.deuda);
+
+    //    clientes.Add(cliente);
+
+    //}
+
+    //foreach(Cliente cliente in clientes)
+    //{
+    //    Console.WriteLine(cliente.nombre+": "+cliente.estado);
+    //}
+
+
+
+    //List<Programador> programadores = new List<Programador>();
+
+
+    //for (int i = 0; i < 3; i++)
+    //{
+    //    Programador programador = new Programador();
+
+    //    Console.WriteLine("Ingrese su nombre: ");
+    //    programador.nombre = Console.ReadLine();
+    //    Console.WriteLine("Ingrese su salario: ");
+    //    programador.salario = int.Parse(Console.ReadLine());
+
+
+    //    programadores.Add(programador);
+    //}
+
+    //foreach (Programador programador in programadores)
+    //{
+    //    if(programador.salario > 650000)
+    //    {
+    //        Console.WriteLine(programador.nombre+" "+programador.salario);
+    //    }
+    //}
+
+
+    //List<Persona> personas = new List<Persona>();
+
+    //for(int i = 0;i < 3; i++)
+    //{
+    //    Persona persona = new Persona();
+
+    //    Console.WriteLine("Ingrese su nombre: ");
+    //    persona.nombre = Console.ReadLine();
+    //    Console.WriteLine("Ingrese su edad: ");
+    //    persona.edad = int.Parse(Console.ReadLine());
+    //    Console.WriteLine("Ingrese su altura");
+    //    persona.altura = double.Parse(Console.ReadLine());
+
+    //    personas.Add(persona);
+
+    //    persona.Presentarse();
+
+    //}
+
+    //foreach (Persona persona in personas)
+    //{
+    //    Console.WriteLine(persona.nombre + ", " + persona.edad +", "+ persona.altura);
+    //}
+
+
+
+    //var saludo = new holaMundo();
+    //saludo.Saludar();
+    //var resultado = new operacionesBasicas();
+    //resultado.Operaciones(57, 71);
+    //var numeros = new almacenarNumeros();
+    //numeros.GuardarNumeros();
+    //var instancia = new funcionesVarias();
+    //instancia.sumar(4, 5);
+    //instancia.restar(6, 3);
+    //instancia.multiplicar(2, 3);
+    //instancia.dividir(8, 4);
+    //instancia.promedio(new List<int> { 1, 5, 8, 4, 6, 4 });
+
 
     //public void Saludar()
     //{
@@ -127,7 +132,7 @@ class holaMundo
     //    char letra = 'a';
     //    Console.WriteLine(letra);
     //}
-}
+
 /*
  2. **Operaciones básicas + condicionales**
     - Escribir un programa que pida al usuario dos números enteros, los sume, reste, multiplique y divida (si el segundo número no es cero), e imprima los resultados.

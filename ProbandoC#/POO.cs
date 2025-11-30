@@ -63,31 +63,31 @@ class Persona
         - Pedir datos por consola, permitir crear varios clientes, mostrar listado con su estado.
  */
 
-class Cliente
-{
-    public string nombre { get; set; }
-    public int deuda { get; set; }
-    public string estado { get; set; }
+//class Cliente
+//{
+//    public string nombre { get; set; }
+//    public int deuda { get; set; }
+//    public string estado { get; set; }
 
 
-    public void calcularEstado(int deuda)
-    {
-        if (deuda <= 0)
-        {
-            estado = "Excelente";
-        }
-        else if (deuda >= 1 && deuda < 50000)
-        {
-            estado = "Bueno";
-        }
-        else if (deuda >= 50000 && deuda < 100000)
-        {
-            estado = "Remolon";
-        }
-        else
-        {
-            estado = "Malo";
-        }
+//    public void calcularEstado(int deuda)
+//    {
+//        if (deuda <= 0)
+//        {
+//            estado = "Excelente";
+//        }
+//        else if (deuda >= 1 && deuda < 50000)
+//        {
+//            estado = "Bueno";
+//        }
+//        else if (deuda >= 50000 && deuda < 100000)
+//        {
+//            estado = "Remolon";
+//        }
+//        else
+//        {
+//            estado = "Malo";
+//        }
 
-    }
-}
+//    }
+//}
